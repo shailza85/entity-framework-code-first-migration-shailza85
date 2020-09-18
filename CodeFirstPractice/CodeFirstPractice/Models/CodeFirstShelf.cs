@@ -15,7 +15,7 @@ namespace CodeFirstPractice.Models
         // Declare a primary key.
         [Key]
         // Specifies AUTO_INCREMENT.
-       // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         // Declare the column name and the data type.
         // MySQL data type, NOT C# data type.
         [Column("id", TypeName = "int(10)")]

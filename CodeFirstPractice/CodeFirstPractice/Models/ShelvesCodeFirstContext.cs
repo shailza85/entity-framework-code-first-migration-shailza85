@@ -57,10 +57,20 @@ namespace CodeFirstPractice.Models
                 // If you have foreign keys, declare them here as "HasIndex".
 
                 // Declare the string encoding for our text fields.
-                entity.Property(e => e.Name)
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");                  
+                    entity.Property(e => e.Name)
+                   .HasCharSet("utf8mb4")
+                   .HasCollation("utf8mb4_general_ci");
+
+                entity.HasData(
+                    new CodeFirstShelf() { ID = 3, Name = "Book Shelf"},
+                    new CodeFirstShelf() { ID = 4, Name = "Pen Shelf"},
+                    new CodeFirstShelf() { ID = 5, Name = "Chair Shelf"},
+                    new CodeFirstShelf() { ID = 6, Name = "Boxes Shelf"},
+                    new CodeFirstShelf() { ID = 7, Name = "Cards Shelf"}
+                    
+                    );
             });
+        
 
             // Call the partial method in case we add some stuff to another file later.
             OnModelCreatingPartial(modelBuilder);
