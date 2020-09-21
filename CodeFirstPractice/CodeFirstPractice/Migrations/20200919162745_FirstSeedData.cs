@@ -2,7 +2,7 @@
 
 namespace CodeFirstPractice.Migrations
 {
-    public partial class ShelfSeedData : Migration
+    public partial class FirstSeedData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,16 +11,26 @@ namespace CodeFirstPractice.Migrations
                 columns: new[] { "id", "name" },
                 values: new object[,]
                 {
-                    { 3, "Book Shelf" },
-                    { 4, "Pen Shelf" },
-                    { 5, "Chair Shelf" },
-                    { 6, "Boxes Shelf" },
-                    { 7, "Cards Shelf" }
+                    { 1, "Movies Shelf" },
+                    { 2, "Books Shelf" },
+                    { 3, "Cloths Shelf" },
+                    { 4, "Tools Shelf" },
+                    { 5, "Games Shelf" }
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DeleteData(
+                table: "Shelves",
+                keyColumn: "id",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "Shelves",
+                keyColumn: "id",
+                keyValue: 2);
+
             migrationBuilder.DeleteData(
                 table: "Shelves",
                 keyColumn: "id",
@@ -35,16 +45,6 @@ namespace CodeFirstPractice.Migrations
                 table: "Shelves",
                 keyColumn: "id",
                 keyValue: 5);
-
-            migrationBuilder.DeleteData(
-                table: "Shelves",
-                keyColumn: "id",
-                keyValue: 6);
-
-            migrationBuilder.DeleteData(
-                table: "Shelves",
-                keyColumn: "id",
-                keyValue: 7);
         }
     }
 }

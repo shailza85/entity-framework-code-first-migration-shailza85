@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CodeFirstPractice.Migrations
 {
-    [DbContext(typeof(ShelvesCodeFirstContext))]
-    [Migration("20200918001126_ShelfSeedData")]
-    partial class ShelfSeedData
+    [DbContext(typeof(ShelvesContext))]
+    [Migration("20200919145625_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace CodeFirstPractice.Migrations
                 .HasAnnotation("ProductVersion", "3.1.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("CodeFirstPractice.Models.CodeFirstShelf", b =>
+            modelBuilder.Entity("CodeFirstPractice.Models.Shelves", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -35,33 +35,6 @@ namespace CodeFirstPractice.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Shelves");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 3,
-                            Name = "Book Shelf"
-                        },
-                        new
-                        {
-                            ID = 4,
-                            Name = "Pen Shelf"
-                        },
-                        new
-                        {
-                            ID = 5,
-                            Name = "Chair Shelf"
-                        },
-                        new
-                        {
-                            ID = 6,
-                            Name = "Boxes Shelf"
-                        },
-                        new
-                        {
-                            ID = 7,
-                            Name = "Cards Shelf"
-                        });
                 });
 #pragma warning restore 612, 618
         }
